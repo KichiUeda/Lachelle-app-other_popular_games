@@ -1,0 +1,51 @@
+{
+  "name": "other_popular_games",
+  "version": "1.0.0",
+  "description": "FEC UEDA Other Related Games Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "dev": "nodemon ./server/index.js",
+    "start": "node index.js",
+    "build": "webpack",
+    "react:dev": "webpack --watch -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KichiUeda/other_popular_games.git"
+  },
+  "author": "LachelleF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KichiUeda/other_popular_games/issues"
+  },
+  "homepage": "https://github.com/KichiUeda/other_popular_games#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.19",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "react-test-renderer": "^16.13.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
