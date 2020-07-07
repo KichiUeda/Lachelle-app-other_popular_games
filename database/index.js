@@ -14,13 +14,13 @@ db.once('openUri', function () {
 });
 
 const otherPopularGamesSchema = mongoose.Schema({
-  genres: String,
-  relatedGames: String
+  //id's 1 - 16 automatically assigned
+  genre: String,
+  relatedGames: Array
 });
 
 const OtherPopularGames = mongoose.model('OtherPopularGames', otherPopularGamesSchema);
 
 module.exports.db = db;
 module.exports = OtherPopularGames;
-//db methods to be added
-
+//possible other db methods to be added
