@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import ReactDOM from "react-dom";
 import styled from 'styled-components';
 import CardImage from './CardImage.jsx';
 import GameName from './GameName.jsx';
@@ -13,8 +11,9 @@ const CardWrapper = styled.div`
 const CardContainer = styled.div`
   background-color: #ffff;
   color: #a1a7b2;
-  height: 221px;
   width: 270px;
+  height: 257px;
+
 `;
 
 const Card = (props) => {

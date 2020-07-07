@@ -25,25 +25,25 @@ app.listen(PORT, (error) => {
 });
 
 
-//send product id to Rane for genre
-app.get('/genre/:product_id', (req, res) => {
-  //Rane sends back genere
-  fetchers
-    .fetchEverythingElseForProduct(res.genre)  //******write this method per details below
-    //receive back array of productIds
-    .then((results) => {
-      //  send productIds to:  (Promises All or Helper fn's that call each of these services, manipulate data if needed/as needed)
-      //  Micko for images
-      //  Chris for PlatformsImages
-      //  myself for Price and Promotions for Name, Price, Discount
-      res.send(results);
-    })
-    .catch((err) => {
-      if (err) {
-        res.status(505).send(err, 'Please try again');
-      }
-    });
-});
+// //send product id to Rane for genre
+// app.get('/genre/:product_id', (req, res) => {
+//   //Rane sends back genre
+//   fetchers
+//     .fetchEverythingElseForProduct(res.genre)  //******write this method per details below
+//     //receive back array of productIds
+//     .then((results) => {
+//       //  send productIds to:  (Promises All or Helper fn's that call each of these services, manipulate data if needed/as needed)
+//       //  Micko for images
+//       //  Chris for PlatformsImages
+//       //  myself for Price and Promotions for Name, Price, Discount
+//       res.send(results);
+//     })
+//     .catch((err) => {
+//       if (err) {
+//         res.status(505).send(err, 'Please try again');
+//       }
+//     });
+// });
 //*****
 //look up product id in my database for which genre it is listed in
 //query for that genre id for it's related product Ids array

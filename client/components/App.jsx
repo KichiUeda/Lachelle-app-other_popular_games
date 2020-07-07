@@ -5,14 +5,13 @@ import Carousel from "./Carousel.jsx";
 
 const AppWrapper = styled.div`
   width: 100%;
-  height: 339px;
+  height: 375.53px;
   background-color: #282c34;
 `;
 const AppStyled = styled.div`
-  height: 269px;
+  height: 305.53px;
   color: #a1a7b2;
 `;
-
 
 class App extends React.Component {
   constructor(props) {

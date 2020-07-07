@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const GameNameContainer = styled.div`
-  height: 53px;
+  height: 21.54px;
   padding: 10px;
 `;
 
