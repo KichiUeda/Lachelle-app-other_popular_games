@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ImageStyled = styled.div`
   background-color:  #ffffff;
   width: 270px;
-  height: 15399px;
+  height: 153.99px;
   display: flex;
   flex-wrap: wrap;
   align-items: space-around;
