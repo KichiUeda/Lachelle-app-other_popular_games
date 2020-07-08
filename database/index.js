@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/OtherPopularGames', {
-  useMongoClient: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 const db = mongoose.connection;
@@ -14,9 +15,9 @@ db.once('openUri', function () {
 });
 
 const otherPopularGamesSchema = mongoose.Schema({
-  //id's 1 - 16 automatically assigned
-  genre: String,
-  relatedGames: Array
+  genreId: Number,
+  genreName: String,
+  genreRelatedGames: Array
 });
 
 const OtherPopularGames = mongoose.model('OtherPopularGames', otherPopularGamesSchema);
