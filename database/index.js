@@ -14,11 +14,13 @@ db.once('openUri', function () {
   console.log('mongoose connected successfully');
 });
 
+//SIMPLIFiED -- CHECK NOW WITH MATTHEW
 const otherPopularGamesSchema = mongoose.Schema({
-  genreId: Number,
+  product_id: Number,
   genreName: String,
-  genreRelatedGames: Array
 });
+
+//ADD METHOD HERE OR CREATE MODEL DIR AND ADD MODEL THERE
 
 const OtherPopularGames = mongoose.model('OtherPopularGames', otherPopularGamesSchema);
 

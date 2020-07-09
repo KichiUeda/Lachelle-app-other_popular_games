@@ -11,82 +11,66 @@ let genres = [
   {
     genreId: 1,
     genreName: "Action",
-    genreRelatedGames: []
   },
   {
     id: 2,
     genreName: "Adventure",
-    genreRelatedGames: []
   },
   {
     id: 3,
     genreName: "FPS",
-    genreRelatedGames: []
   },
   {
     id: 4,
     genreName: "Indie",
-    genreRelatedGames: []
   },
   {
     id: 5,
     genreName: "MMO",
-    genreRelatedGames: []
-  },
+   },
   {
     id: 6,
     genreName: "Multiplayer",
-    genreRelatedGames: []
   },
   {
     id: 7,
     genreName: "Puzzle",
-    genreRelatedGames: []
   },
   {
     id: 8,
     genreName: "Racing",
-    genreRelatedGames: []
   },
   {
     id: 9,
     genreName: "Retro",
-    genreRelatedGames: []
   },
   {
     id: 10,
     genreName: "RPG",
-    genreRelatedGames: []
   },
   {
     id: 11,
     genreName: "Simulation",
-    genreRelatedGames: []
   },
   {
     id: 12,
     genreName: "Sports",
-    genreRelatedGames: []
   },
   {
     id: 13,
     genreName: "Stealth",
-    genreRelatedGames: []
   },
   {
     id: 14,
     genreName: "Strategy",
-    genreRelatedGames: []
   },
   {
     id: 15,
     genreName: "Tabletop",
-    genreRelatedGames: []
   },
   {
     id: 16,
     genreName: "Virtual Reality",
-    genreRelatedGames: []
   },
 ]
 
@@ -105,12 +89,12 @@ let seedToRandom = function () {
 
 // generating 100 records because this is test data
 let seedNotRandom = function () {
-
-  for (var i = 1; i <= 16; i++) {
-    let start = 1;
-    genres[i].genreRelatedGames.push(1, 2, 3, 4, 5);
+  let data = {
+    product_id: //1 - 100
+    genre: //string assigned to this game at this product_id
   }
-  //sampleFileGenerator(genres);
+  //ASK MATTHEW HOW HE WOULD WRITE THIS TO KEEP SIMPLE/CONSISTENT EACH TIME
+
   return genres;
 }
 
@@ -146,4 +130,4 @@ function seedToFile() {
   return otherPopularGames;
 }
 
-//module.exports = { seedToDB, seed }
+module.exports = { seedToDB, seed }
