@@ -13,13 +13,12 @@ const CardContainer = styled.div`
   color: #a1a7b2;
   width: 270px;
   height: 257px;
-
 `;
 
 const Card = (props) => {
   return (
     <CardWrapper>
-      <h2>Card Goes Here</h2>
+
       <CardContainer>
         <CardImage />
         <GameName />
