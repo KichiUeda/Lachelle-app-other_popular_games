@@ -26,16 +26,16 @@ app.listen(PORT, (error) => {
 });
 
 app.get('OtherPopularGames/:product_id', (req, res) => {
-  let { product_id } = req.params;
+  // let { product_id } = req.params;
 
-  if (!product_id) {
-    return res.status(400).send("A product ID is needed");
-  }
-  
+  // if (!product_id) {
+  //   return res.status(400).send("A product ID is needed");
+  // }
+
   //MAKE CALL TO DB
     //find this product_id's genre
     //then
     //find all other games based on this filter (genre)
     //return them to me in array
 
-}
+});
