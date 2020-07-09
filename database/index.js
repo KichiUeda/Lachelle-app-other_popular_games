@@ -21,7 +21,7 @@ const otherPopularGamesSchema = mongoose.Schema({
 
   let findGamesInSameGenre = (id) => {
     //console.log('id from server format: ', id);
-    return OtherPopularGames.findOne({}, { product_id: id }, 'genreName')
+    return OtherPopularGames.findOne({ product_id: id }, 'genreName')
     .then(genre => {
       console.log('got genre, now to search all games: ', genre);
       return OtherPopularGames.find({genreName: genre});

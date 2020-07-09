@@ -34,8 +34,8 @@ app.get('OtherPopularGames/:product_id', (req, res) => {
   // } else {
   //   findGamesInSameGenre( product_id )
   //   .then( arrayOfIds => {
-    res.send(arrayOfIds).status(200)
-  })
+  //   res.send(arrayOfIds).status(200)
+  // })
   //   .catch()
   // }
 });
