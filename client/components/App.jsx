@@ -16,19 +16,14 @@ const AppStyled = styled.div`
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: []//what data will I be altering state with? cards in carousel list
-    };
+    this.state = { };
   }
 
   render() {
     return (
       <AppWrapper>
         <AppStyled>
-          <h1>Testing 1, 2, 3 - Other Popular Games</h1>
-          <div>
             <Carousel />
-          </div>
         </AppStyled>
       </AppWrapper>
     );

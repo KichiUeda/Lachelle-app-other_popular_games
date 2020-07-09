@@ -91,14 +91,26 @@ let genres = [
 ]
 
 // generating 100 records because this is test data
-let seed = function () {
+let seedToRandom = function () {
 
   for (var i = 1; i <= 100; i++) {
     let randomGenreId = randomGameGenreId(0, 15);
     let randomGameId = i;
     genres[randomGenreId].genreRelatedGames.push(randomGameId);
   }
-  sampleFileGenerator(genres);
+  //sampleFileGenerator(genres);
+  return genres;
+}
+
+
+// generating 100 records because this is test data
+let seedNotRandom = function () {
+
+  for (var i = 1; i <= 16; i++) {
+    let start = 1;
+    genres[i].genreRelatedGames.push(1, 2, 3, 4, 5);
+  }
+  //sampleFileGenerator(genres);
   return genres;
 }
 
@@ -107,13 +119,13 @@ let seedToDB = function () {
   //call seed fn
   let data = seed();
   //insert records into db
-  // return db.collection.insertMany(data)
-  //   //response fr db
-  //   .then(result => {
-  //     console.log('Successfully inserted items: ', result);
-  //     return result;
-  //   })
-  //   .catch(err => console.error(`Failed to insert documents: ${err}`));
+  return db.collection.insertMany(data)
+    //response fr db
+    .then(result => {
+      console.log('Successfully inserted items: ', result);
+      return result;
+    })
+    .catch(err => console.error(`Failed to insert documents: ${err}`));
 };
 
 //Returns an integer random number between min (included) and max (included):
@@ -122,7 +134,9 @@ function randomGameGenreId(min, max) {
 }
 
 //Returns a file that can be stored as gist on github per school requirements
-function sampleFileGenerator(genres) {
+function seedToFile() {
+
+  let genres = seed();
   //Following is used once to provide sample data for testing purposes
   //json, stringify obj
   let jsonArray = JSON.stringify(genres);
@@ -132,4 +146,4 @@ function sampleFileGenerator(genres) {
   return otherPopularGames;
 }
 
-seedToDB();
+//module.exports = { seedToDB, seed }

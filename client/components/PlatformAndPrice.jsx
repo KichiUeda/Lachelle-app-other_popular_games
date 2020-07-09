@@ -6,28 +6,30 @@ const PlatformAndPriceRowStyled = styled.div`
   padding: 10px;
 `;
 
-const PlatformStyled = styled.h2`
-  NOTE FIX:  left-justified;
-  margin: 0;
-`;
+// const PlatformStyled = styled.h2`
+//   NOTE FIX:  left-justified;
+//   margin: 0;
+// `;
 
-const DiscountContainer = styled.div`
-  NOTE FIX: to left of price button
-  tbd
-`;
+// const DiscountContainer = styled.div`
+//   NOTE FIX: to left of price button
+//   tbd
+// `;
 
 
-const PriceButton = styled.div`
-  NOTE FIX: right-justified
-  tbd
-`;
+// const PriceButton = styled.div`
+//   NOTE FIX: right-justified
+//   tbd
+// `;
 
 const PlatformAndPrice = (props) => {
   return (
     <PlatformAndPriceRowStyled>
-      <PlatformStyled>OS_Platform</PlatformStyled>
-      <DiscountConstainer>$3.00</DiscountConstainer>
-      <PriceButton>$40.00</PriceButton>
+      {/* <PlatformStyled>OS_Platform</PlatformStyled>
+      <DiscountContainer>$3.00</DiscountContainer>
+      <PriceButton>$40.00</PriceButton> */}
+      <div>OS</div>
+      <div>$20.00</div>
     </PlatformAndPriceRowStyled>
   );
 };

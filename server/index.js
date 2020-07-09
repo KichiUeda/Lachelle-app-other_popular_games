@@ -6,15 +6,16 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 const cors = require('cors');
+const data = require('../database/seed.js');
 
-app.use(express.static(__dirname + 'public'));
+//app.use(express.static(__dirname + 'public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.send(('Hello Other Popular Games'));
+  res.sendFile('index.html');
 });
 
 app.listen(PORT, (error) => {
@@ -45,6 +46,10 @@ app.listen(PORT, (error) => {
 //     });
 // });
 //*****
+
+// app.get('/genre/:product_id', (req, res) {
+//   let data = data.seed();
+// })
 //look up product id in my database for which genre it is listed in
 //query for that genre id for it's related product Ids array
 //return array of product ids associated with that genre to server here
