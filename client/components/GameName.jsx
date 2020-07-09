@@ -6,8 +6,15 @@ const GameNameContainer = styled.div`
   padding: 10px;
 `;
 
-const GameNameStyled = styled.h2`
+const GameNameStyled = styled.h4`
   margin: 0;
+  color: #494f5c;
+  text-align: left;
+  white-space: normal;
+  text-transform: uppercase;
+  font-family: 'Sofia Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
 `;
 
 const GameName = (props) => {

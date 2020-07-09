@@ -13,17 +13,20 @@ const AppStyled = styled.div`
   color: #a1a7b2;
 `;
 
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {};
   }
 
   render() {
     return (
       <AppWrapper>
         <AppStyled>
-            <Carousel />
+          {/* <AppTitle>Other Popular Games Today</AppTitle> */}
+          <Carousel />
         </AppStyled>
       </AppWrapper>
     );

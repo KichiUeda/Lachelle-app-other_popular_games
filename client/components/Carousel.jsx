@@ -3,18 +3,28 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Card from "./Card.jsx";
 
+
 const CardWrapper = styled.div`
   display: block;
   width: 100vw;
 `;
-
+const AppTitle = styled.h2`
+  margin-bottom: 15px;
+  color: ##a1a7b2;
+  text-indent: 3em;
+  white-space: normal;
+  text-transform: uppercase;
+  font-family: 'Sofia Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+`;
 const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-right: 5vw;
   margin-left: 5vw;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 `;
 
 const Arrow = styled.div`
@@ -33,16 +43,19 @@ const Arrow = styled.div`
 
 const Carousel = (props) => {
   return (
-    <CardWrapper>
-      <Arrow><i className='fas fa-angle-left'></i></Arrow>
-      <CardContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </CardContainer>
-      <Arrow><i className='fas fa-angle-right'></i></Arrow>
-    </CardWrapper>
+
+      <CardWrapper>
+        <br></br>
+        <AppTitle>Other Popular Games Today</AppTitle>
+        {/* <Arrow><i className='fas fa-angle-left'></i></Arrow> */}
+        <CardContainer>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </CardContainer>
+        {/* <Arrow><i className='fas fa-angle-right'></i></Arrow> */}
+      </CardWrapper>
   );
 };
 
