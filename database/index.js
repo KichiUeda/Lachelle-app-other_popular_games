@@ -14,20 +14,26 @@ db.once('openUri', function () {
   console.log('mongoose connected successfully');
 });
 
-//SIMPLIFiED -- CHECK NOW WITH MATTHEW
 const otherPopularGamesSchema = mongoose.Schema({
   product_id: Number,
   genreName: String,
 });
 
-//ADD METHOD HERE OR CREATE MODEL DIR AND ADD MODEL THERE
-  //function that takes in a product id
-  //looks up the document and returns the genre
-  //filter all records on that genreName
-  //returning their product_ids in array
+  let findGamesInSameGenre = (id) => {
+    //console.log('id from server format: ', id);
+    return OtherPopularGames.findOne({}, { product_id: id }, 'genreName')
+    .then(genre => {
+      console.log('got genre, now to search all games: ', genre);
+      return OtherPopularGames.find({genreName: genre});
+    })
+    .catch(error) => {
+      console.log(error);
+      //need to flesh out proper error response
+    }
+  };
 
 const OtherPopularGames = mongoose.model('OtherPopularGames', otherPopularGamesSchema);
 
 module.exports.db = db;
 module.exports = OtherPopularGames;
-//possible other db methods to be added
+module.exports = { findGamesInSameGenre }

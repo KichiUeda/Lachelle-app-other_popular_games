@@ -57,7 +57,7 @@ function seedToFile() {
   return data;
 };
 
-seedToDB();
+// seedToDB();
 // seedToFile();
 
 module.exports = { seedToDB }
