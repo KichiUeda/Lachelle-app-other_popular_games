@@ -16,7 +16,7 @@ const AppTitle = styled.h2`
   text-transform: uppercase;
   font-family: 'Sofia Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 `;
 const CardContainer = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const Arrow = styled.div`
   align-items: center;
   .fas {
     color: #949699;
-    font-size: 50px;
+    font-size: 40px;
   }
   &:hover .fas{
     color: #d2d5d9;
@@ -44,18 +44,18 @@ const Arrow = styled.div`
 const Carousel = (props) => {
   return (
 
-      <CardWrapper>
-        <br></br>
-        <AppTitle>Other Popular Games Today</AppTitle>
-        {/* <Arrow><i className='fas fa-angle-left'></i></Arrow> */}
-        <CardContainer>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </CardContainer>
-        {/* <Arrow><i className='fas fa-angle-right'></i></Arrow> */}
-      </CardWrapper>
+    <CardWrapper>
+      <br></br>
+      <AppTitle>Other Popular Games Today</AppTitle>
+      <CardContainer>
+        <Arrow><i className='fas fa-angle-left fa-3'></i></Arrow>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Arrow><i className='fas fa-angle-right fa-3'></i></Arrow>
+      </CardContainer>
+    </CardWrapper>
   );
 };
 
