@@ -32,10 +32,12 @@ app.get('OtherPopularGames/:product_id', (req, res) => {
   // if (!product_id) {
   //   return res.status(400).send("A product ID is needed");
   // } else {
-  //   findGamesInSameGenre( product_id )
+  //   findGamesInSameGenre( product_id , //add cb fn here)
   //   .then( arrayOfIds => {
   //   res.send(arrayOfIds).status(200)
   // })
   //   .catch()
   // }
 });
+
+
