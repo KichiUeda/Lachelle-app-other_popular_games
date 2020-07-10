@@ -13,8 +13,6 @@ const AppStyled = styled.div`
   color: #a1a7b2;
 `;
 
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);

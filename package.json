@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "dev": "nodemon ./server/index.js",
-    "start": "node index.js",
+    "start": "node ./server/deindex.js",
     "build": "webpack",
     "react:dev": "webpack --watch -d",
     "seeddb": "node ./database/seed.js"
@@ -27,7 +27,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "mongodb": "^3.5.9",
+    "mongodb": "^2.2.33",
     "mongoose": "^5.9.19",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

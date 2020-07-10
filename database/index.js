@@ -19,23 +19,22 @@ const otherPopularGamesSchema = mongoose.Schema({
   genreName: String,
 });
 
-let findGamesInSameGenre = (id, cb) => {
+let findGamesInSameGenre = (id) => {
   //console.log('id from server format: ', id);
   return OtherPopularGames.findOne({ product_id: id }, 'genreName')
-    .then(genre => console.log(genre))
-    .catch(error => console.log('ERROR', error));
-  // .then((genre) => {
-  //   OtherPopularGames.find({genreName: genre});
-  // })
-  // .catch(error => {
-  //   console.log('ERROR', error);
-  //   cb(error, null);
-  // });
+  //{ _id: 5f072b267d03786bd77c10fd, genreName: 'Multiplayer' }
+  .then((genre) => {
+    return OtherPopularGames.find({genreName: genre.genreName});
+  })
+  .then((data) => console.log('genre Array data to return to server: ', data))
+  .catch(error => console.log('ERROR', error));
+
 };
 
 const OtherPopularGames = mongoose.model('OtherPopularGames', otherPopularGamesSchema);
 
-module.exports.db = db;
+//module.exports.db = db;
 module.exports = OtherPopularGames;
 module.exports = { findGamesInSameGenre }
 
+ 
