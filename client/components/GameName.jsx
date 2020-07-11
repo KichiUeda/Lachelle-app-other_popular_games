@@ -20,7 +20,7 @@ const GameNameStyled = styled.h4`
 const GameName = (props) => {
   return (
     <GameNameContainer>
-      <GameNameStyled>Game Name</GameNameStyled>
+      <GameNameStyled>{props.name}</GameNameStyled>
     </GameNameContainer>
   );
 };

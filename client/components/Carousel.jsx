@@ -42,17 +42,19 @@ const Arrow = styled.div`
   `;
 
 const Carousel = (props) => {
+  let cards = props.values.slice(0,4);
   return (
-
     <CardWrapper>
       <br></br>
       <AppTitle>Other Popular Games Today</AppTitle>
       <CardContainer>
         <Arrow><i className='fas fa-angle-left fa-3'></i></Arrow>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+          {
+            cards.map(value =>
+              <Card
+              values={value} />
+            )
+          }
         <Arrow><i className='fas fa-angle-right fa-3'></i></Arrow>
       </CardContainer>
     </CardWrapper>

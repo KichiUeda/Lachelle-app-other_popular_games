@@ -13,7 +13,7 @@ const ImageStyled = styled.div`
 const CardImage = (props) => {
   return (
     <ImageStyled>
-     <h3>image</h3>
+     {props.image}
     </ImageStyled>
   );
 };

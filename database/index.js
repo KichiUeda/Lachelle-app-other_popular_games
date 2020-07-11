@@ -26,15 +26,16 @@ let findGamesInSameGenre = (id) => {
   .then((genre) => {
     return OtherPopularGames.find({genreName: genre.genreName});
   })
-  .then((data) => console.log('genre Array data to return to server: ', data))
+  .then((data) => {
+    console.log('genre Array data to return to server: ', data);
+    return data;
+  })
   .catch(error => console.log('ERROR', error));
 
 };
 
 const OtherPopularGames = mongoose.model('OtherPopularGames', otherPopularGamesSchema);
 
-//module.exports.db = db;
 module.exports = OtherPopularGames;
 module.exports = { findGamesInSameGenre }
 
- 
