@@ -14,6 +14,8 @@ const AppStyled = styled.div`
   color: #a1a7b2;
 `;
 
+const DEFAULT_PRODUCT_ID = 21;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -76,8 +78,32 @@ class App extends React.Component {
     return products;
   }
 
+  getProductId(path) {
+    console.log('this.getProductId call success path=', path);
+    if (path !== null) {
+      let pathArray = path.split('/');
+
+      if (pathArray.count > 0) {
+        let productId = Number(pathArray[pathArray.length - 1]);
+        if (productId !== NaN) {
+          console.log('success pulling and parsing id: ', productId);
+          return (productId);
+        }
+      }
+    }
+    return DEFAULT_PRODUCT_ID;
+  }
+
+  getProductIdFromUrl() {
+    console.log('get id from URL called successfully. ', window.location.pathname);
+    return this.getProductId(window.location.pathname);
+  }
+
   componentDidMount() {
-    this.fetchProductIds(5).then((productIds) => {
+
+    let productId = this.getProductIdFromUrl();
+
+    this.fetchProductIds(productId).then((productIds) => {
       this.setState({ data: this.fetchProducts(productIds) });
     });
   }
