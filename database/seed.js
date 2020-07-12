@@ -1,7 +1,7 @@
-const faker = require('faker');
 const fs = require('fs');
 const db = require('./index.js');
 const mongoose = require('mongoose');
+const OtherPopularGames = require ('./index.js');
 mongoose.Promise = global.Promise;
 
 //genre list assigned to game product_id
@@ -25,7 +25,7 @@ const genres = [
 ]
 
 // generating 100 records to be used as test data
-let seedGenresToGames = function () {
+let seed = function () {
   let genreArrayOfGames = []
   for (var i = 1; i <= 100; i++) {
     let genreIndex = i % 16;
@@ -34,14 +34,17 @@ let seedGenresToGames = function () {
       genreName: genres[genreIndex]
     })
   }
-  console.log(genreArrayOfGames);
+  //console.log(genreArrayOfGames);
   return genreArrayOfGames;
 };
 
-//function to insert test records into DB
 let seedToDB = function () {
-  let data = seedGenresToGames();
-  return db.collection.insertMany(data)
+  //call seed fn
+  let data = seed();
+
+  //insert records into db db.collection('products').insertMany
+  return OtherPopularGames.insertMany(data)
+    //response fr db
     .then(result => {
       console.log('Successfully inserted items: ', result);
       return result;
@@ -49,15 +52,14 @@ let seedToDB = function () {
     .catch(err => console.error(`Failed to insert documents: ${err}`));
 };
 
-//Returns a file that can be stored as gist on github per school requirements
-function seedToFile() {
-  let data = seedGenresToGames();
-  let jsonArray = JSON.stringify(data);
-  fs.writeFileSync('./database/otherPopularGames1.js', jsonArray);
-  return data;
-};
-
 seedToDB();
-// seedToFile();
 
-module.exports = { seedToDB }
+//Returns a file that can be stored as gist on github per school requirements
+// function seedToFile() {
+//   let data = seed();
+//   let jsonArray = JSON.stringify(data);
+//   fs.writeFileSync('./database/otherPopularGames.js', jsonArray);
+//   return data;
+// };
+
+// seedToFile();

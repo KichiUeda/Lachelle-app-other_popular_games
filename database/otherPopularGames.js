@@ -1,82 +1,100 @@
-[
-  {
-    "genreId": 1,
-    "genreName": "Action",
-    "genreRelatedGames": [23, 71, 77, 99]
-  },
-  {
-    "id": 2,
-    "genreName": "Adventure",
-    "genreRelatedGames": [9, 15, 63, 62, 66, 80, 85]
-  },
-  {
-    "id": 3,
-    "genreName": "FPS",
-    "genreRelatedGames": [7, 30, 43, 69, 75]
-  },
-  {
-    "id": 4,
-    "genreName": "Indie",
-    "genreRelatedGames": [11, 47, 67, 83, 90, 94]
-  },
-  {
-    "id": 5,
-    "genreName": "MMO",
-    "genreRelatedGames": [3, 33, 48, 56, 58, 65]
-  },
-  {
-    "id": 6,
-    "genreName": "Multiplayer",
-    "genreRelatedGames": [27, 50, 60, 78, 84]
-  },
-  {
-    "id": 7,
-    "genreName": "Puzzle",
-    "genreRelatedGames": [1, 4, 5, 22, 73, 82]
-  },
-  {
-    "id": 8,
-    "genreName": "Racing",
-    "genreRelatedGames": [8, 24, 51, 72, 76, 96]
-  },
-  {
-    "id": 9,
-    "genreName": "Retro",
-    "genreRelatedGames": [10, 29, 32, 39, 40, 41, 53]
-  },
-  {
-    "id": 10,
-    "genreName": "RPG",
-    "genreRelatedGames": [2, 20, 35, 37, 52, 54, 93]
-  },
-  {
-    "id": 11,
-    "genreName": "Simulation",
-    "genreRelatedGames": [14, 16, 42, 61, 68, 95]
-  },
-  {
-    "id": 12,
-    "genreName": "Sports",
-    "genreRelatedGames": [36, 81, 87, 92, 97, 100]
-  },
-  {
-    "id": 13,
-    "genreName": "Stealth",
-    "genreRelatedGames": [6, 17, 26, 34, 38, 49, 55]
-  },
-  {
-    "id": 14,
-    "genreName": "Strategy",
-    "genreRelatedGames": [31, 64, 79, 88, 89, 91]
-  },
-  {
-    "id": 15,
-    "genreName": "Tabletop",
-    "genreRelatedGames": [18, 19, 44, 57, 70, 74, 98]
-  },
-  {
-    "id": 16,
-    "genreName": "Virtual Reality",
-    "genreRelatedGames": [12, 13, 21, 25, 28, 45, 46, 59, 86]
-  }
-]
+{ "_id" : ObjectId("5f08b5bbb612445aab896dd6"), "product_id" : 1, "genreName" : "Adventure" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dd7"), "product_id" : 2, "genreName" : "FPS" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dd8"), "product_id" : 3, "genreName" : "Indie" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dd9"), "product_id" : 4, "genreName" : "MMO" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dda"), "product_id" : 5, "genreName" : "Multiplayer" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896ddb"), "product_id" : 6, "genreName" : "Puzzle" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896ddc"), "product_id" : 7, "genreName" : "Racing" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896ddd"), "product_id" : 8, "genreName" : "Retro" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dde"), "product_id" : 9, "genreName" : "RPG" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896ddf"), "product_id" : 10, "genreName" : "Simulation" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de0"), "product_id" : 11, "genreName" : "Sports" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de1"), "product_id" : 12, "genreName" : "Stealth" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de2"), "product_id" : 13, "genreName" : "Strategy" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de3"), "product_id" : 14, "genreName" : "Tabletop" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de4"), "product_id" : 15, "genreName" : "Virtual Reality" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de5"), "product_id" : 16, "genreName" : "Action" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de6"), "product_id" : 17, "genreName" : "Adventure" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de7"), "product_id" : 18, "genreName" : "FPS" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de8"), "product_id" : 19, "genreName" : "Indie" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896de9"), "product_id" : 20, "genreName" : "MMO" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dea"), "product_id" : 21, "genreName" : "Multiplayer" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896deb"), "product_id" : 22, "genreName" : "Puzzle" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dec"), "product_id" : 23, "genreName" : "Racing" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896ded"), "product_id" : 24, "genreName" : "Retro" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dee"), "product_id" : 25, "genreName" : "RPG" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896def"), "product_id" : 26, "genreName" : "Simulation" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df0"), "product_id" : 27, "genreName" : "Sports" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df1"), "product_id" : 28, "genreName" : "Stealth" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df2"), "product_id" : 29, "genreName" : "Strategy" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df3"), "product_id" : 30, "genreName" : "Tabletop" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df4"), "product_id" : 31, "genreName" : "Virtual Reality" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df5"), "product_id" : 32, "genreName" : "Action" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df6"), "product_id" : 33, "genreName" : "Adventure" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df7"), "product_id" : 34, "genreName" : "FPS" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df8"), "product_id" : 35, "genreName" : "Indie" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896df9"), "product_id" : 36, "genreName" : "MMO" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dfa"), "product_id" : 37, "genreName" : "Multiplayer" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dfb"), "product_id" : 38, "genreName" : "Puzzle" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dfc"), "product_id" : 39, "genreName" : "Racing" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dfd"), "product_id" : 40, "genreName" : "Retro" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dfe"), "product_id" : 41, "genreName" : "RPG" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896dff"), "product_id" : 42, "genreName" : "Simulation" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e00"), "product_id" : 43, "genreName" : "Sports" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e01"), "product_id" : 44, "genreName" : "Stealth" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e02"), "product_id" : 45, "genreName" : "Strategy" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e03"), "product_id" : 46, "genreName" : "Tabletop" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e04"), "product_id" : 47, "genreName" : "Virtual Reality" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e05"), "product_id" : 48, "genreName" : "Action" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e06"), "product_id" : 49, "genreName" : "Adventure" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e07"), "product_id" : 50, "genreName" : "FPS" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e08"), "product_id" : 51, "genreName" : "Indie" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e09"), "product_id" : 52, "genreName" : "MMO" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e0a"), "product_id" : 53, "genreName" : "Multiplayer" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e0b"), "product_id" : 54, "genreName" : "Puzzle" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e0c"), "product_id" : 55, "genreName" : "Racing" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e0d"), "product_id" : 56, "genreName" : "Retro" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e0e"), "product_id" : 57, "genreName" : "RPG" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e0f"), "product_id" : 58, "genreName" : "Simulation" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e10"), "product_id" : 59, "genreName" : "Sports" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e11"), "product_id" : 60, "genreName" : "Stealth" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e12"), "product_id" : 61, "genreName" : "Strategy" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e13"), "product_id" : 62, "genreName" : "Tabletop" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e14"), "product_id" : 63, "genreName" : "Virtual Reality" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e15"), "product_id" : 64, "genreName" : "Action" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e16"), "product_id" : 65, "genreName" : "Adventure" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e17"), "product_id" : 66, "genreName" : "FPS" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e18"), "product_id" : 67, "genreName" : "Indie" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e19"), "product_id" : 68, "genreName" : "MMO" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e1a"), "product_id" : 69, "genreName" : "Multiplayer" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e1b"), "product_id" : 70, "genreName" : "Puzzle" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e1c"), "product_id" : 71, "genreName" : "Racing" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e1d"), "product_id" : 72, "genreName" : "Retro" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e1e"), "product_id" : 73, "genreName" : "RPG" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e1f"), "product_id" : 74, "genreName" : "Simulation" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e20"), "product_id" : 75, "genreName" : "Sports" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e21"), "product_id" : 76, "genreName" : "Stealth" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e22"), "product_id" : 77, "genreName" : "Strategy" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e23"), "product_id" : 78, "genreName" : "Tabletop" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e24"), "product_id" : 79, "genreName" : "Virtual Reality" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e25"), "product_id" : 80, "genreName" : "Action" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e26"), "product_id" : 81, "genreName" : "Adventure" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e27"), "product_id" : 82, "genreName" : "FPS" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e28"), "product_id" : 83, "genreName" : "Indie" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e29"), "product_id" : 84, "genreName" : "MMO" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e2a"), "product_id" : 85, "genreName" : "Multiplayer" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e2b"), "product_id" : 86, "genreName" : "Puzzle" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e2c"), "product_id" : 87, "genreName" : "Racing" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e2d"), "product_id" : 88, "genreName" : "Retro" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e2e"), "product_id" : 89, "genreName" : "RPG" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e2f"), "product_id" : 90, "genreName" : "Simulation" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e30"), "product_id" : 91, "genreName" : "Sports" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e31"), "product_id" : 92, "genreName" : "Stealth" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e32"), "product_id" : 93, "genreName" : "Strategy" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e33"), "product_id" : 94, "genreName" : "Tabletop" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e34"), "product_id" : 95, "genreName" : "Virtual Reality" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e35"), "product_id" : 96, "genreName" : "Action" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e36"), "product_id" : 97, "genreName" : "Adventure" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e37"), "product_id" : 98, "genreName" : "FPS" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e38"), "product_id" : 99, "genreName" : "Indie" }
+{ "_id" : ObjectId("5f08b5bbb612445aab896e39"), "product_id" : 100, "genreName" : "MMO" }

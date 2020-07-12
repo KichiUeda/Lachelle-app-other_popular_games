@@ -33,12 +33,9 @@ const PriceButton = styled.div`
 const PlatformAndPrice = (props) => {
   return (
     <PlatformAndPriceRowStyled>
-      {/* <PlatformStyled>OS_Platform</PlatformStyled>
-      <DiscountContainer>$3.00</DiscountContainer>
-      <PriceButton>$40.00</PriceButton> */}
-      <PlatformStyled>OS</PlatformStyled>
-      <DiscountContainer>$4.00</DiscountContainer>
-      <PriceButton>$40.00</PriceButton>
+      <PlatformStyled>{props.values.platform}</PlatformStyled>
+      <DiscountContainer>{props.values.discount}</DiscountContainer>
+      <PriceButton>{props.values.price}</PriceButton>
     </PlatformAndPriceRowStyled>
   );
 };

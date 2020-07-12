@@ -16,14 +16,20 @@ const CardContainer = styled.div`
 `;
 
 const Card = (props) => {
+
   return (
     <CardWrapper>
 
       <CardContainer>
-        <CardImage />
-        <GameName />
-        <PlatformAndPrice />
+        <CardImage image={props.values.image} />
+        <GameName name={props.values.gameName} />
+        <PlatformAndPrice values={{
+          platform: props.values.platform,
+          discount: props.values.discount,
+          price: props.values.price
+        }} />
       </CardContainer>
+
     </CardWrapper>
   );
 };
