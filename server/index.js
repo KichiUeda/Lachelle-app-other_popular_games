@@ -31,19 +31,23 @@ app.get('/OtherPopularGames/:product_id', (req, res) => {
   if (!req.params.product_id) {
     res.status(400).send("A product ID is needed");
   } else {
-    return findGamesInSameGenre( req.params.product_id )
-        .then(genreData => {
-          console.log('server received data fr db: ', genreData);
-          let productIdArray = arrayGenerator(genreData);
-          console.log('array ready to send back to client: ', productIdArray);
-          res.send(productIdArray).status(200);
-        })
-        .catch(error => {
-          console.log('error occurred receivign data from db', error);
-          res.send(error);
-        })
+    return findGamesInSameGenre(req.params.product_id)
+      .then(genreData => {
+        console.log('server received data fr db: ', genreData);
+        let productIdArray = arrayGenerator(genreData);
+        console.log('array ready to send back to client: ', productIdArray);
+        res.send(productIdArray).status(200);
+      })
+      .catch(error => {
+        console.log('error occurred receivign data from db', error);
+        res.send(error);
+      })
   }
   next();
+});
+
+app.get('/:product_id', (req, res) => {
+  res.sendFile(path.resolve('public/index.html'));
 });
 
 let arrayGenerator = function (array) {
