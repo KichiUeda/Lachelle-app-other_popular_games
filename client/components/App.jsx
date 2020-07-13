@@ -21,7 +21,7 @@ class App extends React.Component {
   }
 
   fetchProductIds(productId) {
-    return axios.get(`/OtherPopularGames/${productId}`)
+    return axios.get(`http://localhost:3007/OtherPopularGames/${productId}`)
       .then((response) => {
         let data = response.data;
         console.log('Success getting productids: ', data);
@@ -31,8 +31,7 @@ class App extends React.Component {
         console.log('Error updating views: ', err);
         return [];
       });
-
-  }
+  } 
 
   fetchImage(productIds) {
     return ["url1", "url2", "url3", "url4"];
