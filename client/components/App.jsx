@@ -31,7 +31,7 @@ class App extends React.Component {
         console.log('Error updating views: ', err);
         return [];
       });
-  } 
+  }
 
   fetchImage(productIds) {
     return ["url1", "url2", "url3", "url4"];
@@ -95,4 +95,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App; 
