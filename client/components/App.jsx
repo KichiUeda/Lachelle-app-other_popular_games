@@ -23,6 +23,7 @@ class App extends React.Component {
   }
 
   fetchProductIds(productId) {
+    //TBP - update URL below after publishing
     return axios.get(`http://localhost:3007/OtherPopularGames/${productId}`)
       .then((response) => {
         let data = response.data;
@@ -36,14 +37,18 @@ class App extends React.Component {
   }
 
   fetchImage(productIds) {
+    //confirm shape of productIds data, can the var productIds just be plugged into api url in line below
+    //const requestURL = `http://ec2-52-14-126-227.us-east-2.compute.amazonaws.com:3001/api/${requestArray}?type=card`;
     return ["url1", "url2", "url3", "url4"];
   }
 
   fetchProductTitle(productIds) {
+    //const requestURL = http://ec2-54-224-38-115.compute-1.amazonaws.com:5150/title?id=1&id=7...
     return ["title1", "title2", "title3", "title4"];
   }
 
   fetchProductPlatform(productIds) {
+   //TBP
     return [
       { os: ["urlLinux", "urlWindows"] },
       { os: ["urlMac", "urlLinux"] },
@@ -53,6 +58,8 @@ class App extends React.Component {
   }
 
   fetchProductPriceAndPromo(productIds) {
+    //const requestURL = `ec2-3-128-28-100.us-east-2.compute.amazonaws.com:3006/PriceAndPromotion/${productId}
+    //NOTE PriceAndPromo needs to be able to process multiple productIds too
     return [
       { price: "price1", discount: "discount1" },
       { price: "price2", discount: "discount2" },
@@ -121,8 +128,4 @@ class App extends React.Component {
   }
 }
 
-<<<<<<< HEAD
-export default App; 
-=======
 export default App;
->>>>>>> 8702fcf0b83f1293a6597331555f185d12f85451
