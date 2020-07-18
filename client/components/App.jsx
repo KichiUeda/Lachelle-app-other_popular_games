@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   fetchProductIds(productId) {
-    //TBP - update URL below after publishing
+
     return axios.get(`http://localhost:3007/OtherPopularGames/${productId}`)
       .then((response) => {
         let data = response.data;
@@ -37,41 +37,108 @@ class App extends React.Component {
   }
 
   fetchImage(productIds) {
-    //confirm shape of productIds data, can the var productIds just be plugged into api url in line below
-    //const requestURL = `http://ec2-52-14-126-227.us-east-2.compute.amazonaws.com:3001/api/${requestArray}?type=card`;
-    return ["url1", "url2", "url3", "url4"];
+    //do I need to JSON stringify it, then place that into parameters for encoded URI too?
+    const requestURL = `http://ec2-52-14-126-227.us-east-2.compute.amazonaws.com:3001/api/${productIds}?type=card`;
+
+    return axios.get(requestURL)
+      .then((response) => {
+        let data = response.data;
+        console.log('Success getting images string array from Micko: ', data);
+        return data;
+      })
+      .catch((err) => {
+        console.log('Error getting images string array from Micko: ', err);
+        return [];
+      });
+    //return ["url1", "url2", "url3", "url4"];
+  }
+
+  convertIdArrToString (array) {
+    let productIdString = '';
+    productIds.forEach((idNum, index) => {
+      if (index === 0) {
+        productIdString + `?id=${idNum}`;
+      } else {
+        productIdString + `&id=${idNum}`;
+      }
+    })
+    return productIdString;
   }
 
   fetchProductTitle(productIds) {
-    //const requestURL = http://ec2-54-224-38-115.compute-1.amazonaws.com:5150/title?id=1&id=7...
-    return ["title1", "title2", "title3", "title4"];
+
+    let productIdsString = this.convertIdArrToString(productIds);
+    const requestURL = `http://ec2-54-224-38-115.compute-1.amazonaws.com:5150/description/title/?${productIdsString}`;
+
+    return axios.get(requestURL)
+      .then((response) => {
+        let arrOfProductsRcvd = response.data;
+        let arrOfTitles = [];
+        console.log('Success getting title from description service, which looks like this: ', response, response.data);
+        arrOfTitles.forEach(item => {
+          arrayOfTitles.push(item.title);
+        })
+        return arrOfTitles;
+      })
+      .catch((err) => {
+        console.log('Error getting title from description service: ', err);
+        return err;
+      });
+    //return ["title1", "title2", "title3", "title4"];
   }
 
   fetchProductPlatform(productIds) {
-   //TBP
-    return [
-      { os: ["urlLinux", "urlWindows"] },
-      { os: ["urlMac", "urlLinux"] },
-      { os: ["urlLinux"] },
-      { os: ["urlWindows"] }
-    ];
+
+    //need to JSON stringify array, then place that into parameters for encoded URI, per Chris' instruction
+    const requestArray = encodeURI(JSON.stringify(productIds));
+    const requestURL = `http://ec2-3-129-17-68.us-east-2.compute.amazonaws.com:3002/system_req/platforms/${requestArray}`
+
+    return axios.get(requestURL)
+    .then((response) => {
+      let data = response.data;
+      console.log('Success getting platform and OS array from Chris: ', data);
+      return data;
+    })
+    .catch((err) => {
+      console.log('Error getting platform and OS array from Chris: ', err);
+      return [];
+    });
+    // return [
+    //   { os: ["urlLinux", "urlWindows"] },
+    //   { os: ["urlMac", "urlLinux"] },
+    //   { os: ["urlLinux"] },
+    //   { os: ["urlWindows"] }
+    // ];
   }
 
   fetchProductPriceAndPromo(productIds) {
-    //const requestURL = `ec2-3-128-28-100.us-east-2.compute.amazonaws.com:3006/PriceAndPromotion/${productId}
-    //NOTE PriceAndPromo needs to be able to process multiple productIds too
-    return [
-      { price: "price1", discount: "discount1" },
-      { price: "price2", discount: "discount2" },
-      { price: "price3", discount: "discount3" },
-      { price: "price4", discount: "discount4" }
-    ]
+    //do i need to JSON stringify it if it's already in string?
+    const requestURL = `ec2-3-128-28-100.us-east-2.compute.amazonaws.com:3006/PriceAndPromotion/multiple/${productIds}`
+
+    return axios.get(requestURL)
+    .then((response) => {
+      let data = response.data;
+      console.log('Success getting price/promo array from my other service: ', data);
+      return data;
+    })
+    .catch((err) => {
+      console.log('Error getting price/promo array from my other service: ', err);
+      return [];
+    });
+    //ask M about whether also including product_id is an issue. not using it, yet ...
+    //but may need to for activating carousel functionality
+    // return [
+    //   { price: "price1", discount: "discount1" },
+    //   { price: "price2", discount: "discount2" },
+    //   { price: "price3", discount: "discount3" },
+    //   { price: "price4", discount: "discount4" }
+    // ]
   }
 
   fetchProducts(productIds) {
     console.log('fetchproducts received: ', productIds);
     // let gameName = fetchProductDescription(productId);
-    let products = []
+    let products = [];
 
     productIds.forEach(productId => products.push({
       gameName: `game${productId}`,
