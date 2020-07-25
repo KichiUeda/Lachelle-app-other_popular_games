@@ -42,7 +42,9 @@ const Arrow = styled.div`
   `;
 
 const Carousel = (props) => {
+  //here we receive many cards, each with their own data -- we select 4 and map them each to a given card
   let cards = props.values.slice(0,4);
+  console.log('Carousel props.values array: ', cards);
   return (
     <CardWrapper>
       <br></br>
@@ -50,9 +52,10 @@ const Carousel = (props) => {
       <CardContainer>
         <Arrow><i className='fas fa-angle-left fa-3'></i></Arrow>
           {
-            cards.map(value =>
+            cards.map((value, index) =>
               <Card
-              values={value} />
+              values={value}
+              key={index} />
             )
           }
         <Arrow><i className='fas fa-angle-right fa-3'></i></Arrow>

@@ -1,8 +1,8 @@
-const fs = require('fs');
-const db = require('./index.js');
-const mongoose = require('mongoose');
-const OtherPopularGames = require ('./index.js');
-mongoose.Promise = global.Promise;
+//const fs = require('fs');
+// const mongoose = require('mongoose');
+const {OtherPopularGames } = require('./index.js');
+
+// mongoose.Promise = global.Promise;
 
 //genre list assigned to game product_id
 const genres = [
@@ -40,16 +40,22 @@ let seed = function () {
 
 let seedToDB = function () {
   //call seed fn
-  let data = seed();
 
+  let data = seed();
+  console.log('seed data:', data)
   //insert records into db db.collection('products').insertMany
-  return OtherPopularGames.insertMany(data)
-    //response fr db
-    .then(result => {
-      console.log('Successfully inserted items: ', result);
-      return result;
-    })
-    .catch(err => console.error(`Failed to insert documents: ${err}`));
+  console.log('type of OPG: ', typeof OtherPopularGames)
+  OtherPopularGames.insertMany(data, (error) => {
+    if (error) {
+      console.log("inser many error", error)
+    }
+    console.log('db seeded');
+  })
+  //response fr db
+  // .then(result => {
+  //   console.log('Successfully inserted items: ', result);
+  // })
+  // .catch(err => console.error(`Failed to insert documents: ${err}`));
 };
 
 seedToDB();

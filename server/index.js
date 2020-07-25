@@ -1,7 +1,9 @@
-require('dotenv').config();
+require('dotenv').config({
+  path: "../.env"
+});
 const express = require('express');
 const app = express()
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3007;
 const path = require('path');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
