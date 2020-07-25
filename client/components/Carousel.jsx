@@ -42,6 +42,7 @@ const Arrow = styled.div`
   `;
 
 const Carousel = (props) => {
+  //here we receive many cards, each with their own data -- we select 4 and map them each to a given card
   let cards = props.values.slice(0,4);
   console.log('Carousel props.values array: ', cards);
   return (

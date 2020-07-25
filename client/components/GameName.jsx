@@ -18,6 +18,8 @@ const GameNameStyled = styled.h4`
 `;
 
 const GameName = (props) => {
+  let name = props.name;
+  console.log('GameName component rcvd game name: ', props.name)
   return (
     <GameNameContainer>
       <GameNameStyled>{props.name}</GameNameStyled>
