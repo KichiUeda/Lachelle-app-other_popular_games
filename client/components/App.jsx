@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import Carousel from "./Carousel.jsx";
 import axios from 'axios';
 
-const AppWrapper = styled.div`
+const AppWrapperCarousel = styled.div`
   width: 100%;
   height: 375.53px;
   background-color: #282c34;
 `;
-const AppStyled = styled.div`
+const AppStyledForCarousel = styled.div`
   height: 305.53px;
   color: #a1a7b2;
 `;
@@ -224,11 +224,11 @@ class App extends React.Component {
       return (null);
 
     return (
-      <AppWrapper>
-        <AppStyled>
+      <AppWrapperCarousel>
+        <AppStyledForCarousel>
           <Carousel values={this.state.data} />
-        </AppStyled>
-      </AppWrapper>
+        </AppStyledForCarousel>
+      </AppWrapperCarousel>
     );
   }
 }
