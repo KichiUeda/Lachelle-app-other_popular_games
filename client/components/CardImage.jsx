@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ImageStyled = styled.div`
+const CardImageStyled = styled.div`
   background-color: lightskyblue;
   width: 270px;
   height: 153.99px;
@@ -12,9 +12,9 @@ const ImageStyled = styled.div`
 
 const CardImage = (props) => {
   return (
-    <ImageStyled>
+    <CardImageStyled>
       <img src={props.image} width="100%" height="153.99px"></img>
-    </ImageStyled>
+    </CardImageStyled>
   );
 };
 
