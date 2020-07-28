@@ -24,7 +24,7 @@ class App extends React.Component {
 
   fetchProductIds(productId) {
 
-    return axios.get(`http://localhost:3007/OtherPopularGames/${productId}`)
+    return axios.get(`http://ec2-3-128-28-100.us-east-2.compute.amazonaws.com:3007/OtherPopularGames/${productId}`)
       .then((response) => {
         let data = response.data;
         console.log('Success getting productids: ', data);
@@ -145,23 +145,24 @@ class App extends React.Component {
           console.log('Index within card object creation: ', index);
           console.log('products array in forEach, ', data[0][index]);
           products.push(
-          {
-          product_id: productId,
-          //for given productId, grab title from array of titles at the same index as the productId??? Matthew ques
-          gameName: data[0][index].title,
+            {
+              product_id: productId,
+              //for given productId, grab title from array of titles at the same index as the productId??? Matthew ques
+              gameName: data[0][index].title,
 
-          // image: at same index of given productId, grab image url string from array of images,
-          image: data[1][index].thumbnail,
+              // image: at same index of given productId, grab image url string from array of images,
+              image: data[1][index].thumbnail,
 
-          // platform: for given productId, HAVE MATTHEW counsel here
-          platform: { platforms: data[2][index].platforms, os: data[2][index].os },
+              // platform: for given productId, HAVE MATTHEW counsel here
+              platform: { platforms: data[2][index].platforms, os: data[2][index].os },
 
-          // discount: for given productId, pull from array of discounts
-          discount: data[3][index].promotion,
+              // discount: for given productId, pull from array of discounts
+              discount: data[3][index].promotion,
 
-          // price: for given productId, pull from array of price
-          price: data[3][index].price
-        })});
+              // price: for given productId, pull from array of price
+              price: data[3][index].price
+            })
+        });
         console.log('products array built: ', products);
         return products;
       })
@@ -175,9 +176,10 @@ class App extends React.Component {
     console.log('this.getProductId call success path=', path);
     if (path !== null) {
       let pathArray = path.split('/');
-
-      if (pathArray.count > 0) {
+      console.log('path array after split: ', pathArray);
+      if (pathArray.length > 0) {
         let productId = Number(pathArray[pathArray.length - 1]);
+        console.log('********getProductId fr URL fn result: ', productId)
         if (productId !== NaN) {
           console.log('success pulling and parsing id: ', productId);
           return (productId);
@@ -189,15 +191,23 @@ class App extends React.Component {
 
   getProductIdFromUrl() {
     console.log('get id from URL called successfully. ', window.location.pathname);
-    return this.getProductId(window.location.pathname);
+    if (window.location.pathname === '/') {
+      console.log('returned 21 as PID')
+      return 21;
+    } else {
+      console.log('getting id from URL, not default: ', window.location.pathname)
+      return this.getProductId(window.location.pathname);
+    }
   }
 
   componentDidMount() {
     //get product id from url
     let productId = this.getProductIdFromUrl();
+    console.log('*****get product Id from URL', productId)
     //get related game product ids in same genre as url product id
     this.fetchProductIds(productId)
       .then((productIds) => {
+        console.log('******product ids fetched - ready to fetch products: ', productIds)
         //call apis to fetch product id properties
         this.fetchProducts(productIds)
           //set state for all products -- that will become cards in carousel

@@ -8,7 +8,7 @@
       "name": "Launch Chrome",
       "request": "launch",
       "type": "pwa-chrome",
-      "url": "http://localhost:3007",
+      "url": "localhost:3007/",
       "webRoot": "${workspaceFolder}/public",
       "trace": "verbose",
       "sourceMaps": true,

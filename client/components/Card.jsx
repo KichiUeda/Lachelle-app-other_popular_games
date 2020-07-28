@@ -13,6 +13,7 @@ const CardContainer = styled.div`
   color: #a1a7b2;
   width: 270px;
   height: 257px;
+  margin-right: 10px;
 `;
 
 const Card = (props) => {

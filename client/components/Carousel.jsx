@@ -27,16 +27,16 @@ const CardContainer = styled.div`
   margin-bottom: 5vh;
 `;
 
-const Arrow = styled.div`
-  width: 17;
-  height: 122;
-  display:flex;
+const Arrows = styled.div`
+  display: flex;
   align-items: center;
-  .fas {
+  padding-left: 15px;
+  padding-right: 15px;
+  .arrows {
     color: #949699;
-    font-size: 40px;
+    font-size: 35px;
   }
-  &:hover .fas{
+  &:hover .arrows {
     color: #d2d5d9;
   }
   `;
@@ -50,7 +50,7 @@ const Carousel = (props) => {
       <br></br>
       <AppTitle>Other Popular Games Today</AppTitle>
       <CardContainer>
-        <Arrow><i className='fas fa-angle-left fa-3'></i></Arrow>
+        <Arrows><i className='fas fa-angle-left fa-3'></i></Arrows>
           {
             cards.map((value, index) =>
               <Card
@@ -58,7 +58,7 @@ const Carousel = (props) => {
               key={index} />
             )
           }
-        <Arrow><i className='fas fa-angle-right fa-3'></i></Arrow>
+        <Arrows><i className='fas fa-angle-right fa-3'></i></Arrows>
       </CardContainer>
     </CardWrapper>
   );
