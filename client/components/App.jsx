@@ -171,7 +171,7 @@ class App extends React.Component {
       let pathArray = path.split('/');
       console.log('path array after split: ', pathArray);
       if (pathArray.length > 0) {
-        let productId = Number(pathArray[pathArray.length - 1]);
+        let productId = Number(pathArray[1]);
         console.log('********getProductId fr URL fn result: ', productId)
         if (productId !== NaN) {
           console.log('success pulling and parsing id: ', productId);
