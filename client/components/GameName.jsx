@@ -6,7 +6,7 @@ const GameNameContainer = styled.div`
   padding: 10px;
 `;
 
-const GameNameStyled = styled.h4`
+const GameNameStyled = styled.div`
   margin: 0;
   color: #494f5c;
   text-align: left;
@@ -21,8 +21,8 @@ const GameName = (props) => {
   let name = props.name;
   console.log('GameName component rcvd game name: ', props.name)
   return (
-    <GameNameContainer>
-      <GameNameStyled>{props.name}</GameNameStyled>
+    <GameNameContainer className='OPG-carousel-card-container-card-game-name'>
+      <GameNameStyled className='OPG-carousel-card-container-card-game-name-inline'>{props.name}</GameNameStyled>
     </GameNameContainer>
   );
 };

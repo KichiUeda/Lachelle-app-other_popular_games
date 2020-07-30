@@ -2,17 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PlatformAndPriceRowStyled = styled.div`
-
   width: 95%;
   padding: 2px;
-  bottom-padding: 1px;
+  bottom-padding: 2px;
 `;
 
 const PlatformStyled = styled.div`
   float: left;
-  margin: 0;
 `;
-
+ 
 const DiscountContainer = styled.div`
   color: white;
   font-size: smaller;
@@ -26,7 +24,7 @@ const DiscountContainer = styled.div`
   background-color: green;
 `;
 
-const PriceButton = styled.div`
+const PriceButton = styled.button`
   color: black;
   cursor: pointer;
   font-size: smaller;
@@ -50,13 +48,13 @@ const PlatformAndPrice = (props) => {
   console.log('array of platforms and os: ', combined);
   const platformsArray = combined.map((platform, index) => {
     console.log('platform and index via map: ', platform, index)
-    return <img src={platform[2]} alt="platform icon" width="21px" key={index}></img>;
+    return <img className='OPG-carousel-card-container-card-image-styled-file' src={platform[2]} alt="platform icon" width="21px" key={index}></img>;
   });
   return (
-    <PlatformAndPriceRowStyled>
-      <PlatformStyled>{platformsArray}</PlatformStyled>
-      <DiscountContainer>{props.values.discount}%</DiscountContainer>
-      <PriceButton>${props.values.price}</PriceButton>
+    <PlatformAndPriceRowStyled className='OPG-carousel-card-container-card-price-promo-row-styled'>
+      <PlatformStyled className='OPG-carousel-card-container-card-price-promo-row-styled-platforms-array'>{platformsArray}</PlatformStyled>
+      <DiscountContainer className='OPG-carousel-card-container-card-price-promo-row-styled-discount-array'>{props.values.discount}%</DiscountContainer>
+      <PriceButton className='OPG-carousel-card-container-card-price-promo-row-styled-price-array'>${props.values.price}</PriceButton>
     </PlatformAndPriceRowStyled>
   );
 };
