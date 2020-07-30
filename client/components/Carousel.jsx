@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Card from "./Card.jsx";
+//import { FiChevronLeft, FiChevonRight } from "react-icons/fi";
 
 
-const CardWrapper = styled.div`
+const CarouselCardWrapper = styled.div`
   display: block;
-  width: 100vw;
+  width: 100%;
 `;
 const AppTitle = styled.h2`
   margin-bottom: 15px;
@@ -27,43 +28,43 @@ const CardContainer = styled.div`
   margin-bottom: 5vh;
 `;
 
-const Arrows = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  .arrows {
-    color: #949699;
-    font-size: 35px;
-  }
-  &:hover .arrows {
-    color: #d2d5d9;
-  }
-  `;
+// const Arrows = styled.div`
+//   display: flex;
+//   align-items: center;
+//   padding-left: 15px;
+//   padding-right: 15px;
+//   .arrows {
+//     color: #949699;
+//     font-size: 35px;
+//   }
+//   &:hover .arrows {
+//     color: #d2d5d9;
+//   }
+//   `;
 
 const Carousel = (props) => {
-  //here we receive many cards, each with their own data -- we select 4 and map them each to a given card
-  let cards = props.values.slice(0,4);
+
+  let cards = props.values.slice(0, 4);
   console.log('Carousel props.values array: ', cards);
   return (
-    <CardWrapper>
+    <CarouselCardWrapper className='OPG-carousel-wrapper'>
       <br></br>
-      <AppTitle>Other Popular Games Today</AppTitle>
-      <CardContainer>
-        <Arrows><i className='fas fa-angle-left fa-3'></i></Arrows>
-          {
-            cards.map((value, index) =>
-              <Card
+      {/* <AppTitle className='OPG-app-title'>Other Popular Games Today</AppTitle> */}
+      {/* <Arrows><FiChevronLeft /></Arrows> */}
+      <CardContainer className='OPG-carousel-card-container'>
+        {
+          cards.map((value, index) =>
+            <Card
               values={value}
               key={index} />
-            )
-          }
-        <Arrows><i className='fas fa-angle-right fa-3'></i></Arrows>
+          )
+        }
+        {/* <Arrows><FiChevronRight /></Arrows> */}
       </CardContainer>
-    </CardWrapper>
+    </CarouselCardWrapper>
   );
 };
-
+ 
 export default Carousel;
 
 

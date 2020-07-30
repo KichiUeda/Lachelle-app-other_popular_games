@@ -19,12 +19,12 @@ const CardContainer = styled.div`
 const Card = (props) => {
 
   return (
-    <CardWrapper>
+    <CardWrapper className='OPG-carousel-card-wrapper'>
 
-      <CardContainer>
-        <CardImage image={props.values.image} />
-        <GameName name={props.values.gameName} />
-        <PlatformAndPrice values={{
+      <CardContainer className='OPG-carousel-card-container'>
+        <CardImage className='OPG-carousel-card-container-card-image' image={props.values.image} />
+        <GameName className='OPG-carousel-card-container-card-game-name' name={props.values.gameName} />
+        <PlatformAndPrice className='OPG-carousel-card-container-card-price-promo' values={{
           platform: props.values.platform,
           discount: props.values.discount,
           price: props.values.price

@@ -224,8 +224,8 @@ class App extends React.Component {
       return (null);
 
     return (
-      <AppWrapperCarousel>
-        <AppStyledForCarousel>
+      <AppWrapperCarousel className='OPG-app-wrapper'>
+        <AppStyledForCarousel className='OPG-app-wrapper-styled'>
           <Carousel values={this.state.data} />
         </AppStyledForCarousel>
       </AppWrapperCarousel>
