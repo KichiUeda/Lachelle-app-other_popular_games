@@ -17,6 +17,7 @@ const GameNameStyled = styled.div`
   font-size: 14px;
 `;
 
+
 const GameName = (props) => {
   let name = props.name;
   console.log('GameName component rcvd game name: ', props.name)

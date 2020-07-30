@@ -17,11 +17,11 @@ const CardContainer = styled.div`
   margin: 0 20px 0 0;
 `;
 
+
 const Card = (props) => {
 
   return (
     <CardWrapper className='OPG-carousel-card-wrapper'>
-
       <CardContainer className='OPG-carousel-card-container'>
         <CardImage className='OPG-carousel-card-container-card-image' image={props.values.image} />
         <GameName className='OPG-carousel-card-container-card-game-name' name={props.values.gameName} />
@@ -31,7 +31,6 @@ const Card = (props) => {
           price: props.values.price
         }} />
       </CardContainer>
-
     </CardWrapper>
   );
 };
