@@ -6,6 +6,7 @@ import PlatformAndPrice from './PlatformAndPrice.jsx';
 
 const CardWrapper = styled.div`
   text-align: center;
+  margin: 0;
 `;
 
 const CardContainer = styled.div`
@@ -13,7 +14,7 @@ const CardContainer = styled.div`
   color: #a1a7b2;
   width: 270px;
   height: 257px;
-  margin-right: 10px;
+  margin: 0 20px 0 0;
 `;
 
 const Card = (props) => {

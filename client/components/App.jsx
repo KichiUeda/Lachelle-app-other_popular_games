@@ -3,15 +3,31 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Carousel from "./Carousel.jsx";
 import axios from 'axios';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const AppWrapperCarousel = styled.div`
   width: 100%;
   height: 375.53px;
   background-color: #282c34;
-`;
-const AppStyledForCarousel = styled.div`
-  height: 305.53px;
   color: #a1a7b2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ArrowStyled = styled.i`
+  align-self: center;
+  font-size: 45px;
+  padding-top: 55px;
+  padding-right: 8px;
+  padding-left: 8px;
+  color: #929599;
+  transition: color 0.3s ease-out;
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
 `;
 
 const DEFAULT_PRODUCT_ID = 21;
@@ -225,12 +241,13 @@ class App extends React.Component {
 
     return (
       <AppWrapperCarousel className='OPG-app-wrapper'>
-        <AppStyledForCarousel className='OPG-app-wrapper-styled'>
-          <Carousel values={this.state.data} />
-        </AppStyledForCarousel>
+        <ArrowStyled><FiChevronLeft className="left-chev" /></ArrowStyled>
+        <Carousel values={this.state.data} />
+        <ArrowStyled><FiChevronRight className="right-chev" /></ArrowStyled>
       </AppWrapperCarousel>
     );
   }
 }
+
 
 export default App;
