@@ -84,7 +84,7 @@ class App extends React.Component {
   }
 
   fetchProductTitle(productIds) {
-    //console.log('rane api has PIDs', productIds);
+
     let productIdsString = this.convertIdArrToString(productIds);
     const requestURL = `http://ec2-54-224-38-115.compute-1.amazonaws.com:5150/description/title/${productIdsString}`;
     console.log('titles from Rane api: ', requestURL);
@@ -98,7 +98,7 @@ class App extends React.Component {
         console.log('Error getting title from description service: ', err);
         return err;
       });
-    //return ["title1", "title2", "title3", "title4"];
+
   }
 
   fetchProductPlatform(productIds) {
@@ -115,12 +115,6 @@ class App extends React.Component {
         console.log('Error getting platform and OS array from Chris: ', err);
         return [];
       });
-    // return [
-    //   { os: ["urlLinux", "urlWindows"]},
-    //   { os: ["urlMac", "urlLinux"] },
-    //   { os: ["urlLinux"] },
-    //   { os: ["urlWindows"] }
-    // ];
   }
 
   fetchProductPriceAndPromo(productIds) {
@@ -137,45 +131,28 @@ class App extends React.Component {
         console.log('Error getting price/promo array from my other service: ', err);
         return [];
       });
-    // return [
-    //   { price: "price1", discount: "discount1" },
-    //   { price: "price2", discount: "discount2" },
-    //   { price: "price3", discount: "discount3" },
-    //   { price: "price4", discount: "discount4" }
-    // ]
   }
 
   fetchProducts(productIds) {
     console.log('fetchproducts received: ', productIds);
-    // all below result in arrays of data by ProductId
     return Promise.all([
-      this.fetchProductTitle(productIds), //product ids and titles
-      this.fetchImage(productIds),        //product ids and images
-      this.fetchProductPlatform(productIds),//product ids and platforms
+      this.fetchProductTitle(productIds),
+      this.fetchImage(productIds),
+      this.fetchProductPlatform(productIds),
       this.fetchProductPriceAndPromo(productIds)])
       .then(data => {
         console.log('data from all', data);
         let products = [];
-        // for each productId, map the related product id's properties
         productIds.forEach((productId, index) => {
           console.log('Index within card object creation: ', index);
           console.log('products array in forEach, ', data[0][index]);
           products.push(
             {
               product_id: productId,
-              //for given productId, grab title from array of titles at the same index as the productId??? Matthew ques
               gameName: data[0][index].title,
-
-              // image: at same index of given productId, grab image url string from array of images,
               image: data[1][index].thumbnail,
-
-              // platform: for given productId, HAVE MATTHEW counsel here
               platform: { platforms: data[2][index].platforms, os: data[2][index].os },
-
-              // discount: for given productId, pull from array of discounts
               discount: data[3][index].promotion,
-
-              // price: for given productId, pull from array of price
               price: data[3][index].price
             })
         });
@@ -217,16 +194,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    //get product id from url
+
     let productId = this.getProductIdFromUrl();
     console.log('*****get product Id from URL', productId)
-    //get related game product ids in same genre as url product id
+
     this.fetchProductIds(productId)
       .then((productIds) => {
         console.log('******product ids fetched - ready to fetch products: ', productIds)
-        //call apis to fetch product id properties
+
         this.fetchProducts(productIds)
-          //set state for all products -- that will become cards in carousel
+
           .then(products => {
             this.setState({
               data: products
@@ -248,6 +225,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;

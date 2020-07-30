@@ -10,6 +10,7 @@ const CardImageStyled = styled.image`
   align-items: space-around;
 `;
 
+
 const CardImage = (props) => {
   return (
     <CardImageStyled className='OPG-carousel-card-container-card-image-styled'>

@@ -44,7 +44,6 @@ const Carousel = (props) => {
               key={index} />
           )
         }
-
       </CardContainer>
     </CarouselCardWrapper>
   );

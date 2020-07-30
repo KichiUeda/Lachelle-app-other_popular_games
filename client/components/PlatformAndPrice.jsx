@@ -10,7 +10,7 @@ const PlatformAndPriceRowStyled = styled.div`
 const PlatformStyled = styled.div`
   float: left;
 `;
- 
+
 const DiscountContainer = styled.div`
   color: white;
   font-size: smaller;
@@ -38,7 +38,7 @@ const PriceButton = styled.button`
 
 const PlatformAndPrice = (props) => {
   console.log('props for platforms: ', props.values);
-  let discount = ((props.values.discount)/(props.values.price) * 100);
+  let discount = ((props.values.discount) / (props.values.price) * 100);
   console.log('discount: ', discount)
 
   const platforms = props.values.platform.platforms;
