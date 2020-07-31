@@ -1,8 +1,4 @@
-//const fs = require('fs');
-// const mongoose = require('mongoose');
 const {OtherPopularGames } = require('./index.js');
-
-// mongoose.Promise = global.Promise;
 
 //genre list assigned to game product_id
 const genres = [
@@ -34,33 +30,25 @@ let seed = function () {
       genreName: genres[genreIndex]
     })
   }
-  //console.log(genreArrayOfGames);
   return genreArrayOfGames;
 };
 
 let seedToDB = function () {
-  //call seed fn
 
   let data = seed();
-  console.log('seed data:', data)
-  //insert records into db db.collection('products').insertMany
-  console.log('type of OPG: ', typeof OtherPopularGames)
+
   OtherPopularGames.insertMany(data, (error) => {
     if (error) {
-      console.log("inser many error", error)
+      console.log("Seeding records error", error)
     }
     console.log('db seeded');
   })
-  //response fr db
-  // .then(result => {
-  //   console.log('Successfully inserted items: ', result);
-  // })
-  // .catch(err => console.error(`Failed to insert documents: ${err}`));
+
 };
 
 seedToDB();
 
-//Returns a file that can be stored as gist on github per school requirements
+//Returns a file that can be stored as gist on github per requirements
 // function seedToFile() {
 //   let data = seed();
 //   let jsonArray = JSON.stringify(data);
