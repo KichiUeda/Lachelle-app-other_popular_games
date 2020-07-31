@@ -37,17 +37,15 @@ const PriceButton = styled.button`
 `;
 
 const PlatformAndPrice = (props) => {
-  console.log('props for platforms: ', props.values);
+
   let discount = ((props.values.discount) / (props.values.price) * 100);
-  console.log('discount: ', discount)
 
   const platforms = props.values.platform.platforms;
   const os = props.values.platform.os;
 
   let combined = platforms.concat(os);
-  console.log('array of platforms and os: ', combined);
+
   const platformsArray = combined.map((platform, index) => {
-    console.log('platform and index via map: ', platform, index)
     return <img className='OPG-carousel-card-container-card-image-styled-file' src={platform[2]} alt="platform icon" width="21px" key={index}></img>;
   });
   return (

@@ -20,12 +20,13 @@ const GameNameStyled = styled.div`
 
 const GameName = (props) => {
   let name = props.name;
-  console.log('GameName component rcvd game name: ', props.name)
+
   return (
     <GameNameContainer className='OPG-carousel-card-container-card-game-name'>
       <GameNameStyled className='OPG-carousel-card-container-card-game-name-inline'>{props.name}</GameNameStyled>
     </GameNameContainer>
   );
+  
 };
 
 export default GameName;

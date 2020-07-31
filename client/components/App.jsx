@@ -43,11 +43,9 @@ class App extends React.Component {
     return axios.get(`http://ec2-3-128-28-100.us-east-2.compute.amazonaws.com:3007/OtherPopularGames/${productId}`)
       .then((response) => {
         let data = response.data;
-        console.log('Success getting productids: ', data);
         return data;
       })
       .catch((err) => {
-        console.log('Error updating views: ', err);
         return [];
       });
   }
@@ -59,18 +57,14 @@ class App extends React.Component {
     return axios.get(requestURL)
       .then((response) => {
         let data = response.data;
-        console.log('Success getting images string array from Micko: ', data);
         return data;
       })
       .catch((err) => {
-        console.log('Error getting images string array from Micko: ', err);
         return [];
       });
-    //return ["url1", "url2", "url3", "url4"];
   }
 
   convertIdArrToString(array) {
-    console.log('helper function to convert array of PIDs to a string for Rane API: ', array);
     let productIdString = '';
     array.forEach((idNum, index) => {
       if (index === 0) {
@@ -79,7 +73,6 @@ class App extends React.Component {
         productIdString = productIdString + `&id=${idNum}`;
       }
     })
-    console.log('pids converted to string of ids to send to rane: ', productIdString);
     return productIdString;
   }
 
@@ -87,15 +80,13 @@ class App extends React.Component {
 
     let productIdsString = this.convertIdArrToString(productIds);
     const requestURL = `http://ec2-54-224-38-115.compute-1.amazonaws.com:5150/description/title/${productIdsString}`;
-    console.log('titles from Rane api: ', requestURL);
+
     return axios.get(requestURL)
       .then((response) => {
         let arrProdDesc = response.data;
-        console.log('Success getting title from description service, which looks like this: ', response.data);
         return arrProdDesc;
       })
       .catch((err) => {
-        console.log('Error getting title from description service: ', err);
         return err;
       });
 
@@ -108,11 +99,9 @@ class App extends React.Component {
 
     return axios.get(requestURL)
       .then((response) => {
-        console.log('Success getting platform and OS array from Chris: ', response.data);
         return response.data;
       })
       .catch((err) => {
-        console.log('Error getting platform and OS array from Chris: ', err);
         return [];
       });
   }
@@ -124,28 +113,23 @@ class App extends React.Component {
     return axios.get(requestURL)
       .then((response) => {
         let data = response.data;
-        console.log('Success getting price/promo array from my other service: ', response.data);
         return data;
       })
       .catch((err) => {
-        console.log('Error getting price/promo array from my other service: ', err);
         return [];
       });
   }
 
   fetchProducts(productIds) {
-    console.log('fetchproducts received: ', productIds);
+
     return Promise.all([
       this.fetchProductTitle(productIds),
       this.fetchImage(productIds),
       this.fetchProductPlatform(productIds),
       this.fetchProductPriceAndPromo(productIds)])
       .then(data => {
-        console.log('data from all', data);
         let products = [];
         productIds.forEach((productId, index) => {
-          console.log('Index within card object creation: ', index);
-          console.log('products array in forEach, ', data[0][index]);
           products.push(
             {
               product_id: productId,
@@ -156,39 +140,33 @@ class App extends React.Component {
               price: data[3][index].price
             })
         });
-        console.log('products array built: ', products);
         return products;
       })
       .catch((err) => {
-        console.log('Error getting price/promo array from my other service: ', err);
         return [];
       });
   }
 
   getProductId(path) {
-    console.log('this.getProductId call success path=', path);
     if (path !== null) {
       let pathArray = path.split('/');
-      console.log('path array after split: ', pathArray);
+
       if (pathArray.length > 0) {
         let productId = Number(pathArray[1]);
-        console.log('********getProductId fr URL fn result: ', productId)
         if (productId !== NaN) {
-          console.log('success pulling and parsing id: ', productId);
           return (productId);
         }
       }
+
     }
     return DEFAULT_PRODUCT_ID;
   }
 
   getProductIdFromUrl() {
-    console.log('get id from URL called successfully. ', window.location.pathname);
+
     if (window.location.pathname === '/') {
-      console.log('returned 21 as PID')
       return 21;
     } else {
-      console.log('getting id from URL, not default: ', window.location.pathname)
       return this.getProductId(window.location.pathname);
     }
   }
@@ -196,14 +174,10 @@ class App extends React.Component {
   componentDidMount() {
 
     let productId = this.getProductIdFromUrl();
-    console.log('*****get product Id from URL', productId)
 
     this.fetchProductIds(productId)
       .then((productIds) => {
-        console.log('******product ids fetched - ready to fetch products: ', productIds)
-
         this.fetchProducts(productIds)
-
           .then(products => {
             this.setState({
               data: products

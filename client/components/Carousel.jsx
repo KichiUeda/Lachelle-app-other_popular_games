@@ -32,7 +32,7 @@ const CardContainer = styled.div`
 const Carousel = (props) => {
 
   let cards = props.values.slice(0, 4);
-  console.log('Carousel props.values array: ', cards);
+
   return (
     <CarouselCardWrapper className='OPG-carousel-wrapper'>
       <AppTitle className='OPG-app-title'>Other Popular Games Today</AppTitle>
@@ -47,6 +47,7 @@ const Carousel = (props) => {
       </CardContainer>
     </CarouselCardWrapper>
   );
+  
 };
 
 export default Carousel;
